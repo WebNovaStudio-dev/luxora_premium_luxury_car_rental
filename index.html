@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXORA | Drive Luxury. Experience Excellence.</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lux-black': '#111111',
+            'lux-charcoal': '#252525',
+            'lux-bg': '#F5F5F5',
+            'lux-grey': '#888888',
+            'lux-border': '#E8E8E8',
+            'lux-gold': '#C6A46A',
+            'lux-gold-dark': '#B59357',
+            'lux-gold-light': '#F7E7CE',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 10px 30px -10px rgba(0, 0, 0, 0.05)',
+            'card': '0 14px 35px -10px rgba(17, 17, 17, 0.08)',
+            'premium': '0 25px 50px -12px rgba(17, 17, 17, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F5F5F5;
+      color: #111111;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #C6A46A 0%, #E8D0A7 50%, #C6A46A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge-blur {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .hero-mask {
+      background: linear-gradient(180deg, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.4) 50%, rgba(17,17,17,0.85) 100%);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F5F5F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C6A46A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #111111;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-lux-gold selection:text-white">
+
+  <!-- TOP CONCIERGE BAR -->
+  <div class="bg-lux-black text-lux-grey text-xs py-2 px-4 sm:px-8 border-b border-white/10 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center text-gray-300">
+          <i class="fa-solid fa-phone-volume text-lux-gold mr-2 text-[11px]"></i> 24/7 VIP Concierge: +1 (800) 895-LUXORA
+        </span>
+        <span class="flex items-center text-gray-300">
+          <i class="fa-solid fa-location-dot text-lux-gold mr-2 text-[11px]"></i> Beverly Hills • Miami • Dubai • London • Zurich
+        </span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="text-lux-gold font-medium"><i class="fa-solid fa-shield-halved mr-1"></i> Complimentary Fully Comprehensive Insurance</span>
+        <span class="text-white/20">|</span>
+        <button onclick="openModal('authModal')" class="hover:text-white transition">Client Portal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-lux-border transition-all duration-300 shadow-sm" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 rounded-xl bg-lux-black flex items-center justify-center text-lux-gold shadow-md group-hover:scale-105 transition-transform duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2L3 9l9 13 9-13-9-7zm0 3.2L18.4 9 12 18.2 5.6 9 12 5.2z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-2xl font-black tracking-widest text-lux-black uppercase">LUXORA</span>
+            <span class="block text-[9px] uppercase tracking-[0.25em] text-lux-grey -mt-1 font-semibold">Excellence Driven</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-lux-charcoal">
+          <a href="#hero" class="hover:text-lux-gold transition py-1">Home</a>
+          <a href="#fleet" class="hover:text-lux-gold transition py-1">Our Cars</a>
+          <a href="#categories" class="hover:text-lux-gold transition py-1">Categories</a>
+          <a href="#why-luxora" class="hover:text-lux-gold transition py-1">About Us</a>
+          <a href="#testimonials" class="hover:text-lux-gold transition py-1">Reviews</a>
+          <a href="#contact" class="hover:text-lux-gold transition py-1">Contact</a>
+        </nav>
+
+        <!-- Right Side Buttons -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <button onclick="openModal('authModal')" class="text-xs font-semibold text-lux-charcoal hover:text-lux-gold transition px-3 py-2">
+            Sign In
+          </button>
+          <button onclick="openBookingWithCar(null)" class="bg-lux-black hover:bg-lux-gold text-white hover:text-lux-black font-semibold text-xs tracking-wider uppercase px-6 py-3.5 rounded-full transition-all duration-300 shadow-card flex items-center group">
+            <span>Book Now</span>
+            <i class="fa-solid fa-arrow-right-long ml-2 group-hover:translate-x-1 transition-transform"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <div class="flex lg:hidden items-center space-x-3">
+          <button onclick="openBookingWithCar(null)" class="text-xs font-semibold bg-lux-black text-white px-4 py-2 rounded-full sm:hidden">
+            Book
+          </button>
+          <button id="mobileMenuBtn" aria-label="Toggle Menu" class="w-10 h-10 rounded-xl bg-lux-bg flex items-center justify-center text-lux-black focus:outline-none hover:bg-lux-border transition">
+            <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-lux-border bg-white px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-base font-semibold text-lux-black">
+        <a href="#hero" class="mobile-link py-2 border-b border-lux-border flex justify-between items-center">
+          <span>Home</span> <i class="fa-solid fa-chevron-right text-xs text-lux-grey"></i>
+        </a>
+        <a href="#fleet" class="mobile-link py-2 border-b border-lux-border flex justify-between items-center">
+          <span>Our Cars</span> <i class="fa-solid fa-chevron-right text-xs text-lux-grey"></i>
+        </a>
+        <a href="#categories" class="mobile-link py-2 border-b border-lux-border flex justify-between items-center">
+          <span>Categories</span> <i class="fa-solid fa-chevron-right text-xs text-lux-grey"></i>
+        </a>
+        <a href="#why-luxora" class="mobile-link py-2 border-b border-lux-border flex justify-between items-center">
+          <span>Why LUXORA</span> <i class="fa-solid fa-chevron-right text-xs text-lux-grey"></i>
+        </a>
+        <a href="#testimonials" class="mobile-link py-2 border-b border-lux-border flex justify-between items-center">
+          <span>Client Reviews</span> <i class="fa-solid fa-chevron-right text-xs text-lux-grey"></i>
+        </a>
+        <a href="#contact" class="mobile-link py-2 border-b border-lux-border flex justify-between items-center">
+          <span>Contact</span> <i class="fa-solid fa-chevron-right text-xs text-lux-grey"></i>
+        </a>
+        <div class="pt-4 flex flex-col gap-3">
+          <button onclick="openModal('authModal')" class="w-full text-center py-3 border border-lux-charcoal rounded-xl text-lux-black text-sm font-semibold">
+            Login / Client Sign In
+          </button>
+          <button onclick="openBookingWithCar(null)" class="w-full text-center py-3.5 bg-lux-black hover:bg-lux-gold text-white hover:text-lux-black rounded-xl text-sm font-semibold transition">
+            Instant Reservation
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden">
+      <!-- Background Image with Architectural Luxury Setting -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85" 
+          alt="Luxury Black Sports Car" 
+          class="w-full h-full object-cover object-center transform scale-105 duration-1000 ease-out"
+          id="heroImage"
+        />
+        <div class="absolute inset-0 hero-mask"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center text-white flex flex-col items-center">
+        
+        <!-- Luxury Tagline Pill -->
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 transform transition hover:scale-105">
+          <span class="w-2 h-2 rounded-full bg-lux-gold animate-ping"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-lux-gold -ml-3"></span>
+          <span class="text-xs font-semibold uppercase tracking-widest text-lux-gold-light">Exclusive Fleet • 2026 Collection</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight uppercase max-w-5xl leading-none">
+          Drive Beyond <span class="gold-gradient-text">Ordinary</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="mt-6 text-base sm:text-xl text-gray-200 max-w-2xl font-light leading-relaxed">
+          Your Journey. Your Style. Your Luxury. Discover an exclusive handpicked fleet of exotic and prestige motorcars designed for unforgettable journeys.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <a href="#fleet" class="w-full sm:w-auto px-8 py-4 rounded-full bg-lux-gold hover:bg-white text-lux-black font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-premium flex items-center justify-center space-x-2">
+            <span>Explore Collection</span>
+            <i class="fa-solid fa-arrow-down text-xs"></i>
+          </a>
+          <button onclick="openBookingWithCar(null)" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 font-semibold text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-calendar-check text-lux-gold"></i>
+            <span>Book Your Ride</span>
+          </button>
+        </div>
+
+        <!-- Metric highlights -->
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-3xl pt-8 border-t border-white/10 w-full">
+          <div>
+            <p class="text-2xl lg:text-3xl font-extrabold text-white">100%</p>
+            <p class="text-xs text-lux-grey uppercase tracking-wider mt-1">Direct Fleet Ownership</p>
+          </div>
+          <div>
+            <p class="text-2xl lg:text-3xl font-extrabold text-lux-gold">0 Min</p>
+            <p class="text-xs text-lux-grey uppercase tracking-wider mt-1">Wait Airport Delivery</p>
+          </div>
+          <div>
+            <p class="text-2xl lg:text-3xl font-extrabold text-white">4.98★</p>
+            <p class="text-xs text-lux-grey uppercase tracking-wider mt-1">Over 3,400+ VIPs</p>
+          </div>
+          <div>
+            <p class="text-2xl lg:text-3xl font-extrabold text-lux-gold">24/7</p>
+            <p class="text-xs text-lux-grey uppercase tracking-wider mt-1">Personal Chauffeur / Concierge</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FLOATING SEARCH & FILTER BAR -->
+    <div class="max-w-6xl mx-auto px-4 -mt-10 sm:-mt-14 relative z-20">
+      <div class="bg-white rounded-2xl sm:rounded-3xl shadow-premium border border-lux-border p-4 sm:p-6">
+        <form id="searchBarForm" onsubmit="handleHeroSearch(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+          
+          <!-- Pick-up City -->
+          <div class="p-2 sm:p-3 bg-lux-bg rounded-xl border border-transparent focus-within:border-lux-gold transition">
+            <label class="block text-[11px] font-bold text-lux-grey uppercase tracking-wider mb-1">
+              <i class="fa-solid fa-location-dot text-lux-gold mr-1"></i> Pick-up Location
+            </label>
+            <select id="searchLocation" class="w-full bg-transparent text-sm font-semibold text-lux-black focus:outline-none cursor-pointer">
+              <option value="Beverly Hills, CA">Beverly Hills, Los Angeles</option>
+              <option value="Miami Beach, FL">Miami Beach, Florida</option>
+              <option value="Manhattan, NY">Manhattan, New York</option>
+              <option value="Dubai Marina, UAE">Dubai Marina, UAE</option>
+              <option value="Mayfair, London">Mayfair, London, UK</option>
+              <option value="Zurich, CH">Zurich, Switzerland</option>
+            </select>
+          </div>
+
+          <!-- Car Category -->
+          <div class="p-2 sm:p-3 bg-lux-bg rounded-xl border border-transparent focus-within:border-lux-gold transition">
+            <label class="block text-[11px] font-bold text-lux-grey uppercase tracking-wider mb-1">
+              <i class="fa-solid fa-car-side text-lux-gold mr-1"></i> Vehicle Type
+            </label>
+            <select id="searchCategory" class="w-full bg-transparent text-sm font-semibold text-lux-black focus:outline-none cursor-pointer">
+              <option value="all">All Exclusive Categories</option>
+              <option value="Sedan">Prestige Sedans</option>
+              <option value="Sports">Sports Cars</option>
+              <option value="SUV">Luxury SUVs</option>
+              <option value="Supercar">Exotic Supercars</option>
+            </select>
+          </div>
+
+          <!-- Pick-up Date -->
+          <div class="p-2 sm:p-3 bg-lux-bg rounded-xl border border-transparent focus-within:border-lux-gold transition">
+            <label class="block text-[11px] font-bold text-lux-grey uppercase tracking-wider mb-1">
+              <i class="fa-regular fa-calendar-days text-lux-gold mr-1"></i> Pick-up Date
+            </label>
+            <input type="date" id="searchPickupDate" class="w-full bg-transparent text-sm font-semibold text-lux-black focus:outline-none">
+          </div>
+
+          <!-- Return Date -->
+          <div class="p-2 sm:p-3 bg-lux-bg rounded-xl border border-transparent focus-within:border-lux-gold transition">
+            <label class="block text-[11px] font-bold text-lux-grey uppercase tracking-wider mb-1">
+              <i class="fa-regular fa-calendar-check text-lux-gold mr-1"></i> Return Date
+            </label>
+            <input type="date" id="searchReturnDate" class="w-full bg-transparent text-sm font-semibold text-lux-black focus:outline-none">
+          </div>
+
+          <!-- Submit Button -->
+          <div class="sm:col-span-2 lg:col-span-1">
+            <button type="submit" class="w-full h-full min-h-[52px] bg-lux-black hover:bg-lux-gold text-white hover:text-lux-black font-bold text-xs uppercase tracking-wider rounded-xl transition duration-300 flex items-center justify-center space-x-2 shadow-card">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Find Vehicles</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- FEATURED LUXURY CARS FLEET -->
+    <section id="fleet" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-lux-gold uppercase tracking-[0.2em] text-xs font-bold block mb-2">Pinnacle Performance</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-lux-black tracking-tight">
+            Discover Your Next Ride
+          </h2>
+          <p class="text-lux-grey mt-2 max-w-xl text-sm sm:text-base">
+            Explore our handpicked collection of exceptional vehicles maintained to surgical perfection.
+          </p>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="filterContainer">
+          <button onclick="filterCars('all')" class="filter-btn active-pill px-4 py-2 rounded-full text-xs font-bold transition bg-lux-black text-white" data-category="all">
+            All Fleet
+          </button>
+          <button onclick="filterCars('Sedan')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-lux-charcoal hover:bg-lux-border border border-lux-border" data-category="Sedan">
+            Luxury Sedans
+          </button>
+          <button onclick="filterCars('Sports')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-lux-charcoal hover:bg-lux-border border border-lux-border" data-category="Sports">
+            Sports Cars
+          </button>
+          <button onclick="filterCars('SUV')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-lux-charcoal hover:bg-lux-border border border-lux-border" data-category="SUV">
+            SUVs
+          </button>
+          <button onclick="filterCars('Supercar')" class="filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-lux-charcoal hover:bg-lux-border border border-lux-border" data-category="Supercar">
+            Supercars
+          </button>
+        </div>
+      </div>
+
+      <!-- Cars Grid -->
+      <div id="carsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically via JavaScript for clean code structure & realistic car data -->
+      </div>
+
+      <!-- Empty state container -->
+      <div id="emptyFleetMsg" class="hidden text-center py-16 bg-white rounded-3xl border border-lux-border my-8">
+        <i class="fa-solid fa-car-burst text-4xl text-lux-grey mb-3"></i>
+        <h4 class="text-lg font-bold text-lux-black">No vehicles match your search filter</h4>
+        <p class="text-sm text-lux-grey mt-1">Try resetting your category or dates to see available luxury models.</p>
+        <button onclick="filterCars('all')" class="mt-4 px-6 py-2.5 bg-lux-black text-white rounded-full text-xs font-semibold hover:bg-lux-gold hover:text-lux-black transition">
+          Reset Filter
+        </button>
+      </div>
+
+    </section>
+
+    <!-- EXPLORE CATEGORIES SECTION -->
+    <section id="categories" class="py-16 lg:py-24 bg-white border-y border-lux-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-lux-gold uppercase tracking-[0.2em] text-xs font-bold block mb-2">Curated Classes</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-black tracking-tight">
+            Explore Vehicle Categories
+          </h2>
+          <p class="text-lux-grey text-sm sm:text-base mt-2">
+            Tailored automotive experiences designed for boardroom arrivals, coastal touring, and pure track adrenaline.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Category 1: Sedans -->
+          <div onclick="filterCars('Sedan')" class="group relative h-96 rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-premium transition-all duration-500">
+            <img 
+              src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" 
+              alt="Luxury Sedans" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-lux-black/90 via-lux-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-lux-gold text-[10px] font-bold tracking-widest uppercase">Executive Comfort</span>
+              <h3 class="text-xl font-bold text-white mt-1">Luxury Sedans</h3>
+              <p class="text-gray-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Maybach, S-Class, BMW 7 Series & Audi Horch
+              </p>
+              <div class="mt-4 flex items-center text-xs font-bold text-white group-hover:text-lux-gold transition">
+                <span>View 3 Models</span>
+                <i class="fa-solid fa-arrow-right text-[10px] ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Sports Cars -->
+          <div onclick="filterCars('Sports')" class="group relative h-96 rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-premium transition-all duration-500">
+            <img 
+              src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" 
+              alt="Sports Cars" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-lux-black/90 via-lux-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-lux-gold text-[10px] font-bold tracking-widest uppercase">Pure Dynamics</span>
+              <h3 class="text-xl font-bold text-white mt-1">Sports Cars</h3>
+              <p class="text-gray-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Precision engineering, razor handling, track prowess.
+              </p>
+              <div class="mt-4 flex items-center text-xs font-bold text-white group-hover:text-lux-gold transition">
+                <span>View Models</span>
+                <i class="fa-solid fa-arrow-right text-[10px] ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: SUVs -->
+          <div onclick="filterCars('SUV')" class="group relative h-96 rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-premium transition-all duration-500">
+            <img 
+              src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" 
+              alt="Luxury SUVs" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-lux-black/90 via-lux-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-lux-gold text-[10px] font-bold tracking-widest uppercase">Commanding Presence</span>
+              <h3 class="text-xl font-bold text-white mt-1">Prestige SUVs</h3>
+              <p class="text-gray-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Range Rover, Cullinan, Urus & G-Wagon fleets.
+              </p>
+              <div class="mt-4 flex items-center text-xs font-bold text-white group-hover:text-lux-gold transition">
+                <span>View Models</span>
+                <i class="fa-solid fa-arrow-right text-[10px] ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Supercars -->
+          <div onclick="filterCars('Supercar')" class="group relative h-96 rounded-3xl overflow-hidden cursor-pointer shadow-soft hover:shadow-premium transition-all duration-500">
+            <img 
+              src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" 
+              alt="Supercars" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-lux-black/90 via-lux-black/30 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-lux-gold text-[10px] font-bold tracking-widest uppercase">Exotic Power</span>
+              <h3 class="text-xl font-bold text-white mt-1">Supercars</h3>
+              <p class="text-gray-300 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Naturally aspirated V10 & V12 symphonies.
+              </p>
+              <div class="mt-4 flex items-center text-xs font-bold text-white group-hover:text-lux-gold transition">
+                <span>View Models</span>
+                <i class="fa-solid fa-arrow-right text-[10px] ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE LUXORA SECTION -->
+    <section id="why-luxora" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-lux-gold uppercase tracking-[0.2em] text-xs font-bold block mb-2">Uncompromising Standard</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-black tracking-tight">
+          Luxury Is in Every Detail
+        </h2>
+        <p class="text-lux-grey text-sm sm:text-base mt-2">
+          We don't merely rent vehicles. We deliver bespoke driving experiences crafted for discerning connoisseurs.
+        </p>
+      </div>
+
+      <!-- 4 Minimal Clean Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-3xl p-8 border border-lux-border shadow-soft hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-lux-bg flex items-center justify-center text-lux-black group-hover:bg-lux-black group-hover:text-lux-gold transition-colors duration-300 mb-6">
+            <i class="fa-solid fa-gem text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-lux-black mb-2">Premium Collection</h3>
+          <p class="text-lux-grey text-sm leading-relaxed">
+            Carefully selected luxury vehicles, meticulously detailed and inspected to a rigorous 150-point factory standard before each handoff.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-3xl p-8 border border-lux-border shadow-soft hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-lux-bg flex items-center justify-center text-lux-black group-hover:bg-lux-black group-hover:text-lux-gold transition-colors duration-300 mb-6">
+            <i class="fa-solid fa-bolt text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-lux-black mb-2">Easy Booking</h3>
+          <p class="text-lux-grey text-sm leading-relaxed">
+            Reserve your preferred vehicle effortlessly in under 2 minutes with zero paper friction, rapid digital ID approval, and contactless delivery.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-3xl p-8 border border-lux-border shadow-soft hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-lux-bg flex items-center justify-center text-lux-black group-hover:bg-lux-black group-hover:text-lux-gold transition-colors duration-300 mb-6">
+            <i class="fa-solid fa-headset text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-lux-black mb-2">Professional Service</h3>
+          <p class="text-lux-grey text-sm leading-relaxed">
+            Dedicated 24/7 private concierge, airport runway drop-off service, custom route curation, and bilingual chauffeur arrangements.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-3xl p-8 border border-lux-border shadow-soft hover:shadow-card hover:-translate-y-1.5 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-lux-bg flex items-center justify-center text-lux-black group-hover:bg-lux-black group-hover:text-lux-gold transition-colors duration-300 mb-6">
+            <i class="fa-solid fa-shield-check text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-lux-black mb-2">Trusted Experience</h3>
+          <p class="text-lux-grey text-sm leading-relaxed">
+            Reliable and fully transparent rentals. Zero surprise charges, guaranteed reserve models, and comprehensive tier-one insurance coverage.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PREMIUM CINEMATIC EXPERIENCE BANNER -->
+    <section class="relative py-28 lg:py-36 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=2000&q=85" 
+          alt="Luxury Car On Scenic Highway" 
+          class="w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-lux-black via-lux-black/80 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl text-white">
+          <div class="inline-block px-3 py-1 rounded bg-lux-gold/20 border border-lux-gold/40 text-lux-gold text-xs font-bold tracking-widest uppercase mb-4">
+            Exclusive Journeys
+          </div>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Make Every Journey <br class="hidden sm:block">Extraordinary
+          </h2>
+          <p class="mt-6 text-gray-300 text-base sm:text-lg font-light leading-relaxed">
+            Experience the perfect combination of supreme comfort, bespoke elegance and unbridled performance. Delivered to your private terminal or residence door.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#fleet" class="px-8 py-4 bg-lux-gold hover:bg-white text-lux-black font-bold text-xs uppercase tracking-widest rounded-full transition duration-300 shadow-premium">
+              Explore Collection
+            </a>
+            <button onclick="openBookingWithCar(null)" class="px-8 py-4 bg-transparent hover:bg-white/10 text-white border border-white/40 font-semibold text-xs uppercase tracking-widest rounded-full transition duration-300">
+              Inquire Concierge
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMER TESTIMONIALS -->
+    <section id="testimonials" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-lux-gold uppercase tracking-[0.2em] text-xs font-bold block mb-2">Client Endorsements</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-lux-black tracking-tight">
+          Experiences That Speak for Themselves
+        </h2>
+        <p class="text-lux-grey text-sm sm:text-base mt-2">
+          Read what esteemed executives, international travelers, and automobile enthusiasts say about LUXORA.
+        </p>
+      </div>
+
+      <!-- Testimonial Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-3xl p-8 border border-lux-border shadow-soft flex flex-col justify-between hover:shadow-card transition duration-300">
+          <div>
+            <div class="flex items-center space-x-1 text-lux-gold mb-6">
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+            </div>
+            <p class="text-lux-charcoal text-sm italic leading-relaxed">
+              "The Mercedes S-Class arrived in mint, flawless showroom condition straight at LAX signature flight terminal. The digital handover took all of 90 seconds. LUXORA redefines luxury mobility."
+            </p>
+          </div>
+          <div class="mt-8 flex items-center space-x-4 pt-6 border-t border-lux-border">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" 
+              alt="Julian Vance" 
+              class="w-12 h-12 rounded-full object-cover ring-2 ring-lux-gold/30"
+            />
+            <div>
+              <h4 class="text-sm font-bold text-lux-black">Julian Vance</h4>
+              <p class="text-xs text-lux-grey">Managing Director, Vance & Co.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-3xl p-8 border border-lux-border shadow-soft flex flex-col justify-between hover:shadow-card transition duration-300">
+          <div>
+            <div class="flex items-center space-x-1 text-lux-gold mb-6">
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+            </div>
+            <p class="text-lux-charcoal text-sm italic leading-relaxed">
+              "Renting the Porsche 911 GT3 RS along the Pacific Coast Highway was an absolute bucket-list event. LUXORA provided personalized route recommendations and VIP lounge access throughout."
+            </p>
+          </div>
+          <div class="mt-8 flex items-center space-x-4 pt-6 border-t border-lux-border">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" 
+              alt="Elena Rostova" 
+              class="w-12 h-12 rounded-full object-cover ring-2 ring-lux-gold/30"
+            />
+            <div>
+              <h4 class="text-sm font-bold text-lux-black">Elena Rostova</h4>
+              <p class="text-xs text-lux-grey">Tech Founder & Angel Investor</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white rounded-3xl p-8 border border-lux-border shadow-soft flex flex-col justify-between hover:shadow-card transition duration-300">
+          <div>
+            <div class="flex items-center space-x-1 text-lux-gold mb-6">
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+              <i class="fa-solid fa-star text-sm"></i>
+            </div>
+            <p class="text-lux-charcoal text-sm italic leading-relaxed">
+              "Reserved the Range Rover Autobiography for our winter Aspen retreat. Snow tyres fitted, warm child seats ready, and seamless return at the airport. Unmatched attention to detail."
+            </p>
+          </div>
+          <div class="mt-8 flex items-center space-x-4 pt-6 border-t border-lux-border">
+            <img 
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" 
+              alt="Marcus Sterling" 
+              class="w-12 h-12 rounded-full object-cover ring-2 ring-lux-gold/30"
+            />
+            <div>
+              <h4 class="text-sm font-bold text-lux-black">Marcus Sterling</h4>
+              <p class="text-xs text-lux-grey">Private Wealth Advisor</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-16 bg-white border-t border-lux-border">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <span class="text-lux-gold uppercase tracking-[0.2em] text-xs font-bold block mb-1">Frequently Asked</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-lux-black">Common Inquiries</h3>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Item 1 -->
+          <div class="border border-lux-border rounded-2xl p-5 cursor-pointer hover:border-lux-gold transition" onclick="toggleFaq(1)">
+            <div class="flex justify-between items-center">
+              <h4 class="text-sm sm:text-base font-bold text-lux-black">What are the age and license requirements to rent with LUXORA?</h4>
+              <i class="fa-solid fa-chevron-down text-xs text-lux-grey transition-transform duration-300" id="faq-icon-1"></i>
+            </div>
+            <p id="faq-ans-1" class="text-xs sm:text-sm text-lux-grey mt-3 leading-relaxed hidden">
+              Drivers must be at least 21 years of age for Luxury Sedans and SUVs, and 25 years old for Supercars and track-tier models. A valid international or domestic driver's license held for at least 2 years is required alongside identity verification.
+            </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="border border-lux-border rounded-2xl p-5 cursor-pointer hover:border-lux-gold transition" onclick="toggleFaq(2)">
+            <div class="flex justify-between items-center">
+              <h4 class="text-sm sm:text-base font-bold text-lux-black">Is comprehensive insurance included in the daily rental quote?</h4>
+              <i class="fa-solid fa-chevron-down text-xs text-lux-grey transition-transform duration-300" id="faq-icon-2"></i>
+            </div>
+            <p id="faq-ans-2" class="text-xs sm:text-sm text-lux-grey mt-3 leading-relaxed hidden">
+              Yes. All LUXORA rentals include premium comprehensive collision and liability coverage with low deductible tiers. Additional zero-excess protection and glass/tire waivers are optionally available during booking.
+            </p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="border border-lux-border rounded-2xl p-5 cursor-pointer hover:border-lux-gold transition" onclick="toggleFaq(3)">
+            <div class="flex justify-between items-center">
+              <h4 class="text-sm sm:text-base font-bold text-lux-black">Can the vehicle be delivered directly to my private jet terminal or villa?</h4>
+              <i class="fa-solid fa-chevron-down text-xs text-lux-grey transition-transform duration-300" id="faq-icon-3"></i>
+            </div>
+            <p id="faq-ans-3" class="text-xs sm:text-sm text-lux-grey mt-3 leading-relaxed hidden">
+              Absolutely. We provide bespoke white-glove doorstep delivery directly to private FBO airfields, five-star resorts, yacht harbors, and residences within our operational service radii.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & VIP CONCIERGE CALLOUT -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="bg-lux-black rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-lux-gold/10 blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div>
+            <span class="text-lux-gold uppercase tracking-[0.2em] text-xs font-bold block mb-2">Bespoke Inquiries</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+              Ready to Command the Road?
+            </h2>
+            <p class="text-gray-300 text-sm sm:text-base mt-4 leading-relaxed">
+              Connect with our dedicated fleet directors to arrange custom multi-vehicle bookings, corporate delegations, or chauffeur services.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-center space-x-4 text-sm text-gray-300">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-lux-gold">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-lux-grey">Direct Reservation Line</span>
+                  <span class="font-bold text-white">+1 (800) 895-LUXORA</span>
+                </div>
+              </div>
+
+              <div class="flex items-center space-x-4 text-sm text-gray-300">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-lux-gold">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="block text-xs text-lux-grey">VIP Concierge Inquiries</span>
+                  <span class="font-bold text-white">concierge@luxora-fleet.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Contact Form -->
+          <div class="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-2xl backdrop-blur-md">
+            <h3 class="text-lg font-bold text-white mb-4">Request a VIP Quote</h3>
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-medium text-gray-400 mb-1">Your Full Name</label>
+                <input type="text" required placeholder="e.g. Lord Harrington" class="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-xl text-white text-sm focus:outline-none focus:border-lux-gold">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-400 mb-1">Email or Phone</label>
+                <input type="text" required placeholder="name@domain.com" class="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-xl text-white text-sm focus:outline-none focus:border-lux-gold">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-400 mb-1">Preferred Vehicle & Dates</label>
+                <textarea rows="2" placeholder="e.g. Lamborghini Huracán for Monaco Grand Prix weekend" class="w-full px-4 py-3 bg-white/10 border border-white/15 rounded-xl text-white text-sm focus:outline-none focus:border-lux-gold resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full py-3.5 bg-lux-gold hover:bg-white text-lux-black font-bold text-xs uppercase tracking-wider rounded-xl transition duration-300">
+                Transmit VIP Request
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-lux-black text-white pt-16 pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2">
+          <a href="#" class="flex items-center space-x-3 mb-4">
+            <div class="w-9 h-9 rounded-xl bg-lux-charcoal flex items-center justify-center text-lux-gold border border-white/10">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2L3 9l9 13 9-13-9-7zm0 3.2L18.4 9 12 18.2 5.6 9 12 5.2z"/>
+              </svg>
+            </div>
+            <span class="text-2xl font-black tracking-widest text-white uppercase">LUXORA</span>
+          </a>
+          <p class="text-xs uppercase tracking-widest text-lux-gold font-bold mb-3">Drive Luxury. Experience Excellence.</p>
+          <p class="text-lux-grey text-sm max-w-sm leading-relaxed mb-6">
+            The world's preeminent bespoke automotive rental house. Offering pristine, verified luxury vehicles to discerning clients worldwide.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex space-x-3">
+            <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-lux-gold hover:text-lux-black flex items-center justify-center transition border border-white/10 text-sm">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-lux-gold hover:text-lux-black flex items-center justify-center transition border border-white/10 text-sm">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-lux-gold hover:text-lux-black flex items-center justify-center transition border border-white/10 text-sm">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-lux-gold hover:text-lux-black flex items-center justify-center transition border border-white/10 text-sm">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Quick Navigation</h4>
+          <ul class="space-y-2.5 text-xs text-lux-grey">
+            <li><a href="#hero" class="hover:text-lux-gold transition">Home</a></li>
+            <li><a href="#fleet" class="hover:text-lux-gold transition">Our Collection</a></li>
+            <li><a href="#categories" class="hover:text-lux-gold transition">Vehicle Classes</a></li>
+            <li><a href="#why-luxora" class="hover:text-lux-gold transition">The LUXORA Standard</a></li>
+            <li><a href="#testimonials" class="hover:text-lux-gold transition">Client Reviews</a></li>
+            <li><a href="#contact" class="hover:text-lux-gold transition">Concierge Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Car Categories -->
+        <div>
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Categories</h4>
+          <ul class="space-y-2.5 text-xs text-lux-grey">
+            <li><button onclick="filterCars('Sedan')" class="hover:text-lux-gold transition">Luxury Sedans</button></li>
+            <li><button onclick="filterCars('Sports')" class="hover:text-lux-gold transition">High Performance Sports</button></li>
+            <li><button onclick="filterCars('SUV')" class="hover:text-lux-gold transition">Prestige Full-Size SUVs</button></li>
+            <li><button onclick="filterCars('Supercar')" class="hover:text-lux-gold transition">Exotic Supercars</button></li>
+            <li><a href="#fleet" class="hover:text-lux-gold transition">Chauffeur Service</a></li>
+            <li><a href="#fleet" class="hover:text-lux-gold transition">Long-Term Corporate Fleet</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Locations -->
+        <div>
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">HQs & Lounges</h4>
+          <div class="space-y-3 text-xs text-lux-grey">
+            <p><strong class="text-white">Beverly Hills:</strong> 9684 Wilshire Blvd, Beverly Hills, CA 90212</p>
+            <p><strong class="text-white">London:</strong> 45 Park Lane, Mayfair, London W1K 1PN</p>
+            <p><strong class="text-white">Dubai:</strong> DIFC Gate Precinct 4, Dubai, UAE</p>
+            <p class="pt-2 text-lux-gold font-medium"><i class="fa-solid fa-clock mr-1"></i> Open 24 Hours / 365 Days</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright and Credits -->
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-lux-grey gap-4">
+        <div>
+          Copyright © 2026 WebNovaStudio. All Rights Reserved.
+        </div>
+       
+        <div class="flex space-x-6 text-[11px]">
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition">Terms of Rental</a>
+          <a href="#" class="hover:text-white transition">Security & Escrow</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & POPUPS ==================== -->
+
+  <!-- 1. VEHICLE DETAILS QUICK VIEW MODAL -->
+  <div id="detailsModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-premium transform transition-all duration-300">
+      <div class="relative h-72 sm:h-96">
+        <img id="detailImg" src="" alt="Car Image" class="w-full h-full object-cover">
+        <button onclick="closeModal('detailsModal')" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-lux-black/70 hover:bg-lux-black text-white flex items-center justify-center backdrop-blur-md transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <div class="absolute bottom-4 left-4 bg-lux-black/80 backdrop-blur-md text-lux-gold px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase" id="detailCategory">
+          Sedan
+        </div>
+      </div>
+      <div class="p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-lux-border">
+          <div>
+            <h3 class="text-2xl font-extrabold text-lux-black" id="detailTitle">Mercedes-Benz S-Class 580</h3>
+            <p class="text-sm text-lux-grey mt-1" id="detailSubtitle">Flagship Luxury Sedan with chauffeur partition and executive seating</p>
+          </div>
+          <div class="mt-4 sm:mt-0 text-left sm:text-right">
+            <span class="text-2xl font-black text-lux-black" id="detailPrice">$450</span>
+            <span class="text-xs text-lux-grey font-medium">/ day</span>
+            <div class="text-lux-gold text-xs font-bold mt-1" id="detailRating">
+              <i class="fa-solid fa-star"></i> 4.9 (48 Reviews)
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-6">
+          <div class="p-3 bg-lux-bg rounded-2xl text-center">
+            <i class="fa-solid fa-user-group text-lux-gold text-sm mb-1"></i>
+            <span class="block text-[11px] text-lux-grey font-semibold">Capacity</span>
+            <span class="font-bold text-xs text-lux-black" id="detailPassengers">4 Passengers</span>
+          </div>
+          <div class="p-3 bg-lux-bg rounded-2xl text-center">
+            <i class="fa-solid fa-gears text-lux-gold text-sm mb-1"></i>
+            <span class="block text-[11px] text-lux-grey font-semibold">Transmission</span>
+            <span class="font-bold text-xs text-lux-black" id="detailTrans">Automatic 9G</span>
+          </div>
+          <div class="p-3 bg-lux-bg rounded-2xl text-center">
+            <i class="fa-solid fa-gas-pump text-lux-gold text-sm mb-1"></i>
+            <span class="block text-[11px] text-lux-grey font-semibold">Powertrain</span>
+            <span class="font-bold text-xs text-lux-black" id="detailFuel">Twin-Turbo V8 Hybrid</span>
+          </div>
+          <div class="p-3 bg-lux-bg rounded-2xl text-center">
+            <i class="fa-solid fa-gauge-high text-lux-gold text-sm mb-1"></i>
+            <span class="block text-[11px] text-lux-grey font-semibold">0-60 MPH</span>
+            <span class="font-bold text-xs text-lux-black" id="detailSpeed">4.1 seconds</span>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm text-lux-charcoal leading-relaxed mb-6" id="detailDesc">
+          Equipped with Nappa leather upholstery, Burmester 4D surround sound, adaptive air suspension, and comprehensive safety suite.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="bookCurrentDetailCar()" class="flex-1 py-3.5 bg-lux-black hover:bg-lux-gold text-white hover:text-lux-black font-bold text-xs uppercase tracking-wider rounded-xl transition duration-300">
+            Book This Car Now
+          </button>
+          <button onclick="closeModal('detailsModal')" class="py-3.5 px-6 border border-lux-border text-lux-charcoal font-semibold text-xs rounded-xl hover:bg-lux-bg transition">
+            Close Window
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. BOOKING RESERVATION MODAL -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-premium">
+      <div class="bg-lux-black p-6 text-white flex justify-between items-center border-b border-white/10">
+        <div>
+          <span class="text-lux-gold text-xs font-bold uppercase tracking-widest">LUXORA VIP Reservation</span>
+          <h3 class="text-xl font-bold mt-1">Book Your Luxury Vehicle</h3>
+        </div>
+        <button onclick="closeModal('bookingModal')" class="text-gray-400 hover:text-white text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="reservationForm" onsubmit="submitReservation(event)" class="p-6 sm:p-8 space-y-4">
+        
+        <!-- Car Selection -->
+        <div>
+          <label class="block text-xs font-bold text-lux-black uppercase tracking-wider mb-1">Select Vehicle</label>
+          <select id="bookCarSelect" onchange="updateBookingCalc()" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm font-semibold text-lux-black focus:outline-none focus:border-lux-gold">
+            <!-- Populated via JS -->
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-lux-black uppercase tracking-wider mb-1">Pick-up Location</label>
+            <select id="bookLocation" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm font-semibold text-lux-black focus:outline-none focus:border-lux-gold">
+              <option value="Beverly Hills Private Lounge">Beverly Hills Lounge (LA)</option>
+              <option value="LAX Signature Flight Airport">LAX FBO Jet Center</option>
+              <option value="Miami Beach Star Island">Miami Beach / Star Island</option>
+              <option value="Manhattan Midtown VIP Hub">Manhattan VIP Hub (NYC)</option>
+              <option value="Mayfair London Suite">Mayfair London Suite</option>
+              <option value="Dubai International Terminal">Dubai Jet FBO Terminal</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-lux-black uppercase tracking-wider mb-1">Duration (Days)</label>
+            <input type="number" id="bookDays" value="3" min="1" max="60" oninput="updateBookingCalc()" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm font-semibold text-lux-black focus:outline-none focus:border-lux-gold">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-lux-black uppercase tracking-wider mb-1">Pick-up Date</label>
+            <input type="date" id="bookStartDate" required class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm font-semibold text-lux-black focus:outline-none focus:border-lux-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-lux-black uppercase tracking-wider mb-1">Driver Option</label>
+            <select id="bookChauffeur" onchange="updateBookingCalc()" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm font-semibold text-lux-black focus:outline-none focus:border-lux-gold">
+              <option value="self">Self-Drive Experience</option>
+              <option value="chauffeur">Bilingual Executive Chauffeur (+$200/day)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-lux-black uppercase tracking-wider mb-1">Client Full Name</label>
+            <input type="text" required placeholder="e.g. Richard Hendricks" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm font-semibold text-lux-black focus:outline-none focus:border-lux-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-lux-black uppercase tracking-wider mb-1">Contact Phone</label>
+            <input type="tel" required placeholder="+1 (555) 019-2834" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm font-semibold text-lux-black focus:outline-none focus:border-lux-gold">
+          </div>
+        </div>
+
+        <!-- Live Price Summary Box -->
+        <div class="p-4 bg-lux-bg rounded-2xl border border-lux-border space-y-2 mt-4 text-xs">
+          <div class="flex justify-between text-lux-grey">
+            <span>Rate Per Day:</span>
+            <span class="font-bold text-lux-black" id="calcRate">$450 / day</span>
+          </div>
+          <div class="flex justify-between text-lux-grey">
+            <span>Duration:</span>
+            <span class="font-bold text-lux-black" id="calcDaysDisplay">3 Days</span>
+          </div>
+          <div class="flex justify-between text-lux-grey">
+            <span>VIP Concierge & Insurance:</span>
+            <span class="font-bold text-emerald-600">Included ($0)</span>
+          </div>
+          <div class="flex justify-between text-lux-grey" id="calcChauffeurRow">
+            <span>Chauffeur Add-on:</span>
+            <span class="font-bold text-lux-black" id="calcChauffeurVal">$0</span>
+          </div>
+          <div class="pt-2 border-t border-lux-border flex justify-between items-center text-sm">
+            <span class="font-bold text-lux-black">Estimated Total:</span>
+            <span class="text-xl font-black text-lux-black" id="calcTotal">$1,350</span>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-lux-black hover:bg-lux-gold text-white hover:text-lux-black font-bold text-xs uppercase tracking-widest rounded-xl transition duration-300 shadow-premium">
+          Confirm Instant Reservation
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. AUTH / SIGN IN MODAL -->
+  <div id="authModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-premium">
+      <div class="p-6 sm:p-8">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 rounded-lg bg-lux-black flex items-center justify-center text-lux-gold">
+              <i class="fa-solid fa-gem text-xs"></i>
+            </div>
+            <span class="font-black tracking-widest text-lg uppercase">LUXORA</span>
+          </div>
+          <button onclick="closeModal('authModal')" class="text-lux-grey hover:text-lux-black text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <h3 class="text-xl font-extrabold text-lux-black">Client Portal Login</h3>
+        <p class="text-xs text-lux-grey mt-1">Access your verified reservations, valet delivery codes, and VIP contracts.</p>
+
+        <form onsubmit="handleAuthSubmit(event)" class="mt-6 space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-lux-charcoal mb-1">Email Address</label>
+            <input type="email" required placeholder="vip@luxora-member.com" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm focus:outline-none focus:border-lux-gold">
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label class="text-xs font-semibold text-lux-charcoal">Password / Pin</label>
+              <a href="#" class="text-[11px] text-lux-gold font-semibold hover:underline">Forgot?</a>
+            </div>
+            <input type="password" required placeholder="••••••••" class="w-full px-4 py-3 bg-lux-bg border border-lux-border rounded-xl text-sm focus:outline-none focus:border-lux-gold">
+          </div>
+          <button type="submit" class="w-full py-3.5 bg-lux-black hover:bg-lux-gold text-white hover:text-lux-black font-bold text-xs uppercase tracking-wider rounded-xl transition">
+            Sign In to Member Portal
+          </button>
+        </form>
+
+        <div class="mt-6 text-center text-xs text-lux-grey">
+          Not a member yet? <a href="javascript:void(0)" onclick="closeModal('authModal'); openBookingWithCar(null);" class="text-lux-gold font-bold hover:underline">Book a car to register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none max-w-sm bg-lux-black text-white px-5 py-4 rounded-2xl shadow-premium border border-lux-gold/30 flex items-center space-x-3">
+    <div class="w-8 h-8 rounded-full bg-lux-gold/20 text-lux-gold flex items-center justify-center shrink-0">
+      <i class="fa-solid fa-check text-xs"></i>
+    </div>
+    <div class="text-xs">
+      <p class="font-bold text-white" id="toastTitle">Success</p>
+      <p class="text-gray-300" id="toastMessage">Your request has been processed.</p>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // 1. CAR FLEET DATASET
+    const fleetData = [
+      {
+        id: 's-class-580',
+        brand: 'Mercedes-Benz',
+        model: 'S-Class 580 4MATIC',
+        category: 'Sedan',
+        categoryLabel: 'Luxury Sedan',
+        passengers: 4,
+        transmission: 'Automatic 9G',
+        fuel: '4.0L V8 BiTurbo Hybrid',
+        speed: '4.1s (0-60 mph)',
+        price: 450,
+        rating: 4.9,
+        reviewsCount: 52,
+        image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80',
+        tag: 'Flagship Comfort',
+        description: 'The global benchmark for executive opulence. Features reclining executive rear seats, active road noise cancellation, Burmester high-end surround sound, and silky smooth air suspension.'
+      },
+      {
+        id: 'bmw-7-series',
+        brand: 'BMW',
+        model: '7 Series 760i xDrive',
+        category: 'Sedan',
+        categoryLabel: 'Luxury Sedan',
+        passengers: 4,
+        transmission: 'Steptronic 8-Spd',
+        fuel: '4.4L TwinPower V8',
+        speed: '4.0s (0-60 mph)',
+        price: 420,
+        rating: 4.8,
+        reviewsCount: 41,
+        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+        tag: 'Executive Tech',
+        description: 'Revolutionary automotive luxury boasting the 31.3-inch 8K BMW Theater Screen in the rear cabin, automatic power doors, and dynamic four-wheel steering for effortless urban poise.'
+      },
+      {
+        id: 'audi-a8-horch',
+        brand: 'Audi',
+        model: 'A8 L Horch Edition',
+        category: 'Sedan',
+        categoryLabel: 'Prestige Sedan',
+        passengers: 4,
+        transmission: 'Tiptronic 8-Spd',
+        fuel: '3.0L Turbo Mild-Hybrid',
+        speed: '4.5s (0-60 mph)',
+        price: 390,
+        rating: 4.9,
+        reviewsCount: 34,
+        image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80',
+        tag: 'Quiet Prestige',
+        description: 'An extended wheelbase grand limousine built with diamond-quilted leather, foot massage consoles, dual champagne chiller, and Audi iconic predictive active suspension.'
+      },
+      {
+        id: 'porsche-911-gt3',
+        brand: 'Porsche',
+        model: '911 GT3 RS (992)',
+        category: 'Sports',
+        categoryLabel: 'Sports Car',
+        passengers: 2,
+        transmission: '7-Speed PDK Auto',
+        fuel: '4.0L Flat-6 Naturally Asp.',
+        speed: '3.0s (0-60 mph)',
+        price: 750,
+        rating: 5.0,
+        reviewsCount: 68,
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+        tag: 'Track Weapon',
+        description: 'Pure motorsport engineering homologated for the street. Features active DRS aerodynamics, 9,000 RPM redline crescendo, carbon-fiber bucket seating, and mind-bending lateral grip.'
+      },
+      {
+        id: 'range-rover-auto',
+        brand: 'Range Rover',
+        model: 'Autobiography P530',
+        category: 'SUV',
+        categoryLabel: 'Luxury SUV',
+        passengers: 5,
+        transmission: 'ZF 8-Speed Auto',
+        fuel: '4.4L Twin-Turbo V8',
+        speed: '4.4s (0-60 mph)',
+        price: 550,
+        rating: 4.9,
+        reviewsCount: 59,
+        image: 'https://images.unsplash.com/photo-1606220838315-056192d5e927?auto=format&fit=crop&w=800&q=80',
+        tag: 'First Class SUV',
+        description: 'Peerless composure anywhere on earth. Floating roofline, active noise cancelling headrests, Meridian Signature audio, and heated hot-stone massaging leather seats for five.'
+      },
+      {
+        id: 'lamborghini-huracan',
+        brand: 'Lamborghini',
+        model: 'Huracán EVO Spyder',
+        category: 'Supercar',
+        categoryLabel: 'Exotic Supercar',
+        passengers: 2,
+        transmission: '7-Speed Dual-Clutch',
+        fuel: '5.2L Naturally Aspirated V10',
+        speed: '2.9s (0-60 mph)',
+        price: 1200,
+        rating: 5.0,
+        reviewsCount: 84,
+        image: 'https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80',
+        tag: 'V10 Masterpiece',
+        description: 'An unrestrained Italian supercar symphony with open-top thrill. LDVI predictive vehicle dynamics, titanium sport exhaust, and breathtaking aerodynamic lines in stealth metallic finish.'
+      }
+    ];
+
+    let currentSelectedCar = fleetData[0];
+
+    // 2. RENDER FLEET CARDS
+    function renderFleet(items) {
+      const grid = document.getElementById('carsGrid');
+      const emptyMsg = document.getElementById('emptyFleetMsg');
+      
+      if (!items || items.length === 0) {
+        grid.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        return;
+      }
+      
+      emptyMsg.classList.add('hidden');
+      grid.innerHTML = items.map(car => `
+        <div class="bg-white rounded-3xl overflow-hidden border border-lux-border shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+          <!-- Car Image Container -->
+          <div class="relative h-60 overflow-hidden bg-lux-bg">
+            <img 
+              src="${car.image}" 
+              alt="${car.brand} ${car.model}" 
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute top-4 left-4">
+              <span class="badge-blur text-lux-black text-[11px] font-bold px-3 py-1 rounded-full shadow-sm uppercase tracking-wider">
+                ${car.categoryLabel}
+              </span>
+            </div>
+            <div class="absolute top-4 right-4 bg-lux-black/80 backdrop-blur-md text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center space-x-1">
+              <i class="fa-solid fa-star text-lux-gold text-[10px]"></i>
+              <span>${car.rating}</span>
+            </div>
+          </div>
+
+          <!-- Car Details Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] uppercase tracking-wider font-semibold text-lux-gold mb-1">${car.brand}</div>
+              <h3 class="text-xl font-extrabold text-lux-black group-hover:text-lux-gold transition-colors duration-200">
+                ${car.model}
+              </h3>
+
+              <!-- Spec icons row -->
+              <div class="grid grid-cols-3 gap-2 py-4 my-3 border-y border-lux-border/80 text-lux-grey text-xs">
+                <div class="flex items-center space-x-1.5" title="Passengers">
+                  <i class="fa-solid fa-user-group text-lux-charcoal text-[11px]"></i>
+                  <span class="truncate">${car.passengers} Seats</span>
+                </div>
+                <div class="flex items-center space-x-1.5" title="Transmission">
+                  <i class="fa-solid fa-gears text-lux-charcoal text-[11px]"></i>
+                  <span class="truncate">${car.transmission.split(' ')[0]}</span>
+                </div>
+                <div class="flex items-center space-x-1.5" title="Fuel Engine">
+                  <i class="fa-solid fa-gas-pump text-lux-charcoal text-[11px]"></i>
+                  <span class="truncate">${car.fuel.split(' ')[0]}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price & Actions Footer -->
+            <div>
+              <div class="flex items-baseline justify-between mb-4">
+                <div>
+                  <span class="text-2xl font-black text-lux-black">$${car.price}</span>
+                  <span class="text-xs text-lux-grey font-medium"> / day</span>
+                </div>
+                <span class="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">Available Now</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="viewCarDetails('${car.id}')" class="w-full py-3 px-3 bg-white hover:bg-lux-bg text-lux-charcoal border border-lux-border rounded-xl text-xs font-bold transition flex items-center justify-center space-x-1">
+                  <span>View Details</span>
+                </button>
+                <button onclick="openBookingWithCar('${car.id}')" class="w-full py-3 px-3 bg-lux-black hover:bg-lux-gold text-white hover:text-lux-black rounded-xl text-xs font-bold transition shadow-sm flex items-center justify-center space-x-1">
+                  <span>Book Ride</span>
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 3. FILTERING CARS
+    function filterCars(category) {
+      // Update pills appearance
+      const pills = document.querySelectorAll('.filter-btn');
+      pills.forEach(pill => {
+        if (pill.getAttribute('data-category') === category) {
+          pill.className = "filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-lux-black text-white shadow-sm";
+        } else {
+          pill.className = "filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-white text-lux-charcoal hover:bg-lux-border border border-lux-border";
+        }
+      });
+
+      if (category === 'all') {
+        renderFleet(fleetData);
+      } else {
+        const filtered = fleetData.filter(car => car.category.toLowerCase() === category.toLowerCase());
+        renderFleet(filtered);
+      }
+
+      // Smooth scroll slightly towards the fleet anchor if user clicks from categories
+      const fleetEl = document.getElementById('fleet');
+      const rect = fleetEl.getBoundingClientRect();
+      if (rect.top < -50 || rect.top > window.innerHeight) {
+        fleetEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // 4. POPULATE BOOKING SELECT DROPDOWN
+    function populateBookingDropdown() {
+      const select = document.getElementById('bookCarSelect');
+      select.innerHTML = fleetData.map(car => `
+        <option value="${car.id}">
+          ${car.brand} ${car.model} — $${car.price}/day (${car.categoryLabel})
+        </option>
+      `).join('');
+    }
+
+    // 5. VIEW DETAILS MODAL
+    function viewCarDetails(carId) {
+      const car = fleetData.find(c => c.id === carId) || fleetData[0];
+      currentSelectedCar = car;
+
+      document.getElementById('detailImg').src = car.image;
+      document.getElementById('detailCategory').textContent = car.categoryLabel;
+      document.getElementById('detailTitle').textContent = `${car.brand} ${car.model}`;
+      document.getElementById('detailSubtitle').textContent = car.tag + ' • Handcrafted Excellence';
+      document.getElementById('detailPrice').textContent = `$${car.price}`;
+      document.getElementById('detailRating').innerHTML = `<i class="fa-solid fa-star"></i> ${car.rating} (${car.reviewsCount} VIP Reviews)`;
+      document.getElementById('detailPassengers').textContent = `${car.passengers} Passengers`;
+      document.getElementById('detailTrans').textContent = car.transmission;
+      document.getElementById('detailFuel').textContent = car.fuel;
+      document.getElementById('detailSpeed').textContent = car.speed;
+      document.getElementById('detailDesc').textContent = car.description;
+
+      openModal('detailsModal');
+    }
+
+    function bookCurrentDetailCar() {
+      closeModal('detailsModal');
+      openBookingWithCar(currentSelectedCar ? currentSelectedCar.id : null);
+    }
+
+    // 6. BOOKING MODAL OPENER
+    function openBookingWithCar(carId) {
+      populateBookingDropdown();
+      if (carId) {
+        document.getElementById('bookCarSelect').value = carId;
+      }
+      
+      // Default dates: tomorrow to +4 days
+      const today = new Date();
+      const start = new Date(today);
+      start.setDate(today.getDate() + 1);
+      const end = new Date(today);
+      end.setDate(today.getDate() + 4);
+
+      document.getElementById('bookStartDate').value = start.toISOString().split('T')[0];
+      
+      updateBookingCalc();
+      openModal('bookingModal');
+    }
+
+    // 7. REALTIME BOOKING PRICE CALCULATOR
+    function updateBookingCalc() {
+      const carId = document.getElementById('bookCarSelect').value;
+      const days = parseInt(document.getElementById('bookDays').value) || 1;
+      const chauffeur = document.getElementById('bookChauffeur').value;
+      const car = fleetData.find(c => c.id === carId) || fleetData[0];
+
+      const dailyRate = car.price;
+      const chauffeurDaily = chauffeur === 'chauffeur' ? 200 : 0;
+      const totalPerDay = dailyRate + chauffeurDaily;
+      const total = totalPerDay * days;
+
+      document.getElementById('calcRate').textContent = `$${dailyRate} / day`;
+      document.getElementById('calcDaysDisplay').textContent = `${days} ${days === 1 ? 'Day' : 'Days'}`;
+      document.getElementById('calcChauffeurVal').textContent = chauffeurDaily > 0 ? `+$${chauffeurDaily * days} ($200/day)` : '$0 (Self-Drive)';
+      document.getElementById('calcTotal').textContent = `$${total.toLocaleString()}`;
+    }
+
+    // 8. HERO SEARCH BAR SUBMIT
+    function handleHeroSearch(event) {
+      event.preventDefault();
+      const category = document.getElementById('searchCategory').value;
+      const location = document.getElementById('searchLocation').value;
+
+      filterCars(category);
+      showToast('Search Updated', `Showing available fleet for ${location}.`);
+      document.getElementById('fleet').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 9. SUBMIT RESERVATION
+    function submitReservation(e) {
+      e.preventDefault();
+      const carId = document.getElementById('bookCarSelect').value;
+      const car = fleetData.find(c => c.id === carId);
+      const total = document.getElementById('calcTotal').textContent;
+
+      closeModal('bookingModal');
+      showToast('Reservation Transmitted!', `Your booking request for the ${car.brand} ${car.model} (${total}) is confirmed. A concierge has been assigned.`);
+    }
+
+    // 10. AUTH MODAL SUBMIT
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      closeModal('authModal');
+      showToast('Welcome, VIP Client', 'You have been authenticated into the LUXORA Portal.');
+    }
+
+    // 11. CONTACT FORM
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      e.target.reset();
+      showToast('Concierge Inquiry Received', 'Our private client director will contact you within 15 minutes.');
+    }
+
+    // 12. MODAL HELPERS (Pure JS, no external dependency)
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Close on outside click
+    window.addEventListener('click', function(e) {
+      ['detailsModal', 'bookingModal', 'authModal'].forEach(id => {
+        const modal = document.getElementById(id);
+        if (modal && e.target === modal) {
+          closeModal(id);
+        }
+      });
+    });
+
+    // 13. TOAST NOTIFICATION
+    function showToast(title, message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMessage').textContent = message;
+
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0');
+      }, 4500);
+    }
+
+    // 14. ACCORDION TOGGLE
+    function toggleFaq(index) {
+      const ans = document.getElementById(`faq-ans-${index}`);
+      const icon = document.getElementById(`faq-icon-${index}`);
+      if (ans.classList.contains('hidden')) {
+        ans.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        ans.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // 15. MOBILE MENU TOGGLE
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 16. INITIALIZATION
+    window.onload = function() {
+      // Set initial dates for search panel
+      const today = new Date();
+      const pickup = new Date(today);
+      pickup.setDate(today.getDate() + 2);
+      const dropoff = new Date(today);
+      dropoff.setDate(today.getDate() + 5);
+
+      const d1 = document.getElementById('searchPickupDate');
+      const d2 = document.getElementById('searchReturnDate');
+      if (d1) d1.value = pickup.toISOString().split('T')[0];
+      if (d2) d2.value = dropoff.toISOString().split('T')[0];
+
+      // Render initial car fleet
+      renderFleet(fleetData);
+      populateBookingDropdown();
+    };
+  </script>
+</body>
+</html>
